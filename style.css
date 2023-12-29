@@ -1,0 +1,165 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(#010101 ,#1c1c1c 20% 40%);
+  overflow-x: hidden;
+  cursor: none;
+  user-select: none;
+  min-height: 95.88601vh;
+  font-family: Helvetica, sans-serif;
+}
+
+header {
+  margin: 29px auto 80px;
+  width: 90%;
+}
+
+h1 {
+  position: relative;
+  font-family: Helvetica, sans-serif;
+  font-size: 60px;
+  color: #f1f1f1;
+}
+
+
+/* **********************************MOUSE CIRCLE************************************* */
+
+#mouse {
+  position: absolute;
+  min-width: 40px;
+  min-height: 40px;
+  height: 4vw;
+  width: 4vw;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(#f8f8f8, #d9d9d9 66% 33%);
+  border: 1px solid #010101;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+
+/* *******************************************CALC******************************************************* */
+.calculator {
+  text-align: center;
+  margin-top: 50px;
+  cursor: none;
+}
+
+.res {
+  width: 25%;
+  margin: 0 auto;
+  background: rgba(192, 191, 194, 0.753);
+  border: 1px solid rgb(3, 3, 3);
+  cursor: pointer;
+  height: 50px;
+  position: relative;
+  border-top-left-radius: 10px ;
+  border-top-right-radius: 10px;
+  font-size: 1.7rem;
+}
+#lastres {
+  height: 35px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 8px;
+  text-align: right;
+  font-size: 1.7rem;
+}
+span {
+  position: absolute;
+  right: 10px;
+  bottom: 1px;
+  max-width: 90%;
+  max-height: 80%;
+  overflow: hidden;
+}
+
+
+table {
+  cursor: pointer;
+  width: 25%;
+  min-height: 300px;
+  margin: 0 auto;
+  font-size: 2rem;
+  border-bottom-left-radius: 10px ;
+  border-bottom-right-radius: 10px;
+  background: #d9d9d9;
+  user-select: none;
+}
+
+
+td {
+  color: rgba(26, 25, 25, 0.815);
+  min-width: 50px;
+  transition: 0.3s ease-in-out;
+  vertical-align: middle;
+  border-bottom-left-radius: 10px ;
+  border-bottom-right-radius: 10px;
+}
+
+td:hover {
+  filter: brightness(1.05);
+  cursor: pointer;
+}
+
+.equal {
+  background-color: rgb(129, 167, 218);
+}
+
+
+
+/* **************************************MEDIA QUERIES************************************** */
+@media screen and (max-width: 1080px) {
+  h1 {
+    font-size: 2rem;
+  }
+  #ress {
+    width: 300px;
+  }
+  table {
+    font-size: 1.5rem;
+    width: 300px;
+  }
+  td {
+    max-width: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+  .calculator {
+    margin-top: 0;
+  }
+  #ress {
+    width: 255px;
+  }
+  table {
+    font-size: 1.2rem;
+    width: 255px;
+  }
+  td {
+    min-width: 0;
+  }
+}
+@media screen and (max-width: 360px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  h1 {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  #ress {
+    width: 220px;
+  }
+  table {
+    font-size: 1rem;
+    width: 220px;
+  }
+}
