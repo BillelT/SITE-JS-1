@@ -53,7 +53,6 @@ h1 {
   width: 25%;
   margin: 0 auto;
   background: rgba(192, 191, 194, 0.753);
-  border: 1px solid rgb(3, 3, 3);
   cursor: pointer;
   height: 50px;
   position: relative;
@@ -108,7 +107,7 @@ td:hover {
   h1 {
     font-size: 2rem;
   }
-  #ress {
+  .res {
     width: 300px;
   }
   table {
@@ -126,7 +125,7 @@ td:hover {
   .calculator {
     margin-top: 0;
   }
-  #ress {
+  .res {
     width: 255px;
   }
   table {
@@ -147,7 +146,7 @@ td:hover {
     font-size: 1.1rem;
     margin-bottom: 30px;
   }
-  #ress {
+  .res {
     width: 220px;
   }
   table {
