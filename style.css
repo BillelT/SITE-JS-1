@@ -1,12 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: linear-gradient(#010101 ,#1c1c1c 20% 40%);
+  background: linear-gradient(#010101, #1c1c1c 20% 40%);
   overflow-x: hidden;
   cursor: none;
-  user-select: none;
   min-height: 95.88601vh;
   font-family: Helvetica, sans-serif;
 }
@@ -22,7 +25,6 @@ h1 {
   font-size: 60px;
   color: #f1f1f1;
 }
-
 
 /* **********************************MOUSE CIRCLE************************************* */
 
@@ -40,7 +42,6 @@ h1 {
   z-index: -1;
 }
 
-
 /* *******************************************CALC******************************************************* */
 .calculator {
   text-align: center;
@@ -56,27 +57,18 @@ h1 {
   cursor: pointer;
   height: 50px;
   position: relative;
-  border-top-left-radius: 10px ;
+  border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   font-size: 1.7rem;
 }
-#lastres {
-  height: 35px;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 8px;
-  text-align: right;
-  font-size: 1.7rem;
-}
+
 span {
   position: absolute;
   right: 10px;
   bottom: 1px;
   max-width: 90%;
   max-height: 80%;
-  overflow: hidden;
 }
-
 
 table {
   cursor: pointer;
@@ -84,19 +76,17 @@ table {
   min-height: 300px;
   margin: 0 auto;
   font-size: 2rem;
-  border-bottom-left-radius: 10px ;
+  border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background: #d9d9d9;
-  user-select: none;
 }
-
 
 td {
   color: rgba(26, 25, 25, 0.815);
   min-width: 50px;
   transition: 0.3s ease-in-out;
   vertical-align: middle;
-  border-bottom-left-radius: 10px ;
+  border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
@@ -108,8 +98,6 @@ td:hover {
 .equal {
   background-color: rgb(129, 167, 218);
 }
-
-
 
 /* **************************************MEDIA QUERIES************************************** */
 @media screen and (max-width: 1080px) {

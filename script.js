@@ -1,23 +1,27 @@
 // Declare all global variables
 
-const mouseCircle = document.getElementById("mouse")
-calcContainer = document.getElementById('calc-container')
-resContainer = document.getElementById('res-container')
-calcKey = document.querySelectorAll('td')
-calc = document.querySelector("table")
-resultat = document.getElementById("spanres")
+const mouseCircle = document.getElementById("mouse");
+calcContainer = document.getElementById("calc-container");
+resContainer = document.getElementById("res-container");
+calcKey = document.querySelectorAll("td");
+calc = document.querySelector("table");
+resultat = document.getElementById("spanres");
 operators = ["+", "-", "/", "*"];
 
 let total = "0";
 
-
 // Declare function for calculator
 
-
 calc.addEventListener("mousedown", function chiffres(e) {
+  console.log(e);
   const target = e.target.innerHTML;
   let lastCar = total.slice(-1);
-  if (target != "AC" && target != "C" && target != "=") {
+  if (
+    target != "AC" &&
+    target != "C" &&
+    target != "=" &&
+    e.target.childNodes.length < 3
+  ) {
     if (total === "0" && target != ".") {
       total = "";
     }
@@ -50,13 +54,16 @@ calc.addEventListener("mousedown", function chiffres(e) {
   resultat.innerHTML = total;
 });
 
-
 // MOUSE CIRCLE
 
 window.addEventListener("mousemove", (e) => {
   mouseCircle.style.left = e.pageX + "px";
   mouseCircle.style.top = e.pageY + "px";
-  if (e.target == resultat || e.target == resContainer || Array.from(calcKey).includes(e.target)) {
+  if (
+    e.target == resultat ||
+    e.target == resContainer ||
+    Array.from(calcKey).includes(e.target)
+  ) {
     mouseCircle.style.opacity = "0";
   } else {
     mouseCircle.style.opacity = "1";
