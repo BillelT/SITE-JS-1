@@ -4,7 +4,7 @@ const mouseCircle = document.getElementById("mouse");
 calcContainer = document.getElementById("calc-container");
 resContainer = document.getElementById("res-container");
 calcKey = document.querySelectorAll("td");
-tableCalcKey = Array.from(calcKey);
+tableCalcKey = Array.from(calcKey); // turning queryselector into an array of td's elements
 calc = document.querySelector("table");
 resultat = document.getElementById("spanres");
 operators = ["+", "-", "/", "*"]; // mathematic operators array
@@ -27,7 +27,7 @@ window.addEventListener("mousedown", (e) => {
     resContainer.style.border = "2px solid #81a7da";
     resBorderIsBlue = true;
   } else {
-    resContainer.style.border = "2px solid white";
+    resContainer.style.border = "2px solid #f1f1f1";
     resBorderIsBlue = false;
   }
 });
@@ -108,13 +108,13 @@ window.addEventListener("keydown", (e) => {
 });
 
 calc.addEventListener("mousedown", () => {
-  startTimer = new Date();
+  startTimer = new Date(); // start timer when user click on calc element, until he stop to hold
 });
 
 calc.addEventListener("mouseup", function chiffres(e) {
-  endTimer = new Date();
-  let timer = endTimer - startTimer;
+  let timer = endTimer - startTimer; // delta between click down and click up
   let lastCar = total.slice(-1);
+  endTimer = new Date(); // start timer when user stop holding click
   target = e.target.innerHTML;
   if (
     target !== "C" &&
@@ -164,11 +164,11 @@ calc.addEventListener("mouseup", function chiffres(e) {
   resultat.innerHTML = total;
 });
 
-// MOUSE CIRCLE
-
+// create a custom cursor whith event mousemove
 window.addEventListener("mousemove", (e) => {
   mouseCircle.style.left = e.pageX + "px";
   mouseCircle.style.top = e.pageY + "px";
+  // go back to normal cursor when user want to interact with calculator
   if (
     e.target == resultat ||
     e.target == resContainer ||
@@ -181,26 +181,3 @@ window.addEventListener("mousemove", (e) => {
     mouseCircle.style.opacity = "1";
   }
 });
-
-// *************************************** TESTING THINGS *************************************************
-
-// function add(x) {
-//   total += x;
-//   return total;
-// }
-// function subs(x) {
-//   total -= x;
-//   return total;
-// }
-// function div(x) {
-//   if (x === 0) {
-//     total = "ERROR";
-//   } else {
-//     total /= x;
-//     return total;
-//   }
-// }
-// function mult(x) {
-//   total *= x;
-//   return total;
-// }
