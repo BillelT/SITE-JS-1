@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: linear-gradient(#010101, #1c1c1c 20% 40%);
+  background: linear-gradient(18deg, #010101 0, #1c1c1c 100%);
   overflow-x: hidden;
   cursor: none;
   min-height: 95.88601vh;
@@ -47,37 +47,40 @@ h1 {
   text-align: center;
   margin-top: 50px;
   cursor: none;
+  width: 35%;
+  margin: 0 auto;
+  cursor: pointer;
 }
 
 .res {
-  width: 25%;
+  width: 98%;
   margin: 0 auto;
-  background: rgba(192, 191, 194, 0.753);
-  cursor: pointer;
-  height: 50px;
+  background: #c0bfc2c0;
+  height: 64px;
   position: relative;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
+  border: 2px solid white;
   font-size: 1.7rem;
+  overflow: hidden;
 }
 
 span {
+  text-align: right;
   position: absolute;
   right: 10px;
   bottom: 1px;
-  max-width: 90%;
-  max-height: 80%;
+  direction: ltr;
+  white-space: nowrap;
 }
 
 table {
-  cursor: pointer;
-  width: 25%;
+  user-select: none;
+  width: 98%;
   min-height: 300px;
-  margin: 0 auto;
-  font-size: 2rem;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  margin: 16px auto 0;
+  font-size: 1.8rem;
   background: #d9d9d9;
+  border-radius: 10px;
 }
 
 thead {
@@ -85,21 +88,28 @@ thead {
 }
 
 td {
-  color: rgba(26, 25, 25, 0.815);
-  min-width: 50px;
-  transition: 0.3s ease-in-out;
+  background: #d9d9d9;
+  color: #1a1919d0;
+  width: 30px;
+  transition: all 0.3s ease-in-out;
   vertical-align: middle;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
+  padding: 0;
 }
 
 td:hover {
-  filter: brightness(1.05);
+  background: #fcf8f8;
   cursor: pointer;
 }
 
 .equal {
-  background-color: rgb(129, 167, 218);
+  background-color: #81a7da;
+}
+
+.equal:hover {
+  transition: 0.3 ease-in;
+  background-color: rgb(162, 197, 241);
+  cursor: pointer;
 }
 
 /* **************************************MEDIA QUERIES************************************** */
