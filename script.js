@@ -106,6 +106,11 @@ window.addEventListener("keydown", (e) => {
   }
   resultat.innerHTML = total;
 });
+
+calc.addEventListener("mousedown", () => {
+  startTimer = new Date();
+});
+
 calc.addEventListener("mouseup", function chiffres(e) {
   endTimer = new Date();
   let timer = endTimer - startTimer;
