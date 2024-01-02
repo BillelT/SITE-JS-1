@@ -112,10 +112,10 @@ calc.addEventListener("mousedown", () => {
 });
 
 calc.addEventListener("mouseup", function chiffres(e) {
-  let timer = endTimer - startTimer; // delta between click down and click up
-  let lastCar = total.slice(-1);
   endTimer = new Date(); // start timer when user stop holding click
   target = e.target.innerHTML;
+  let timer = endTimer - startTimer; // delta between click down and click up
+  let lastCar = total.slice(-1);
   if (
     target !== "C" &&
     target !== "=" &&
