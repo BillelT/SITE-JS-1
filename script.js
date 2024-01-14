@@ -11,9 +11,7 @@ operators = ["+", "-", "/", "*"]; // mathematic operators array
 
 let resBorderIsBlue = false; // Boolean who become true only if res-container's border is blue
 let total = "0"; // initialize total as same value of inner html of spanres
-let target; // initialize target in global variables so we can use it in all event listner
-let startTimer; // start timer between mouse down and mouse up
-let endTimer; // end timer between mouse down and mouse up
+let clickTimer;
 
 // Event listener for change border in fonction of user's selection, increasing UX
 window.addEventListener("mousedown", (e) => {
@@ -107,14 +105,18 @@ window.addEventListener("keydown", (e) => {
   resultat.innerHTML = total;
 });
 
-calc.addEventListener("mousedown", () => {
-  startTimer = new Date(); // start timer when user click on calc element, until he stop to hold
+calc.addEventListener("mousedown", (e) => {
+  // set the click duration timer to a function who execute after 800ms
+  clickTimer = setTimeout(() => {
+    if (e.target.innerHTML === "C") {
+      total = "0";
+      resultat.innerHTML = total;
+    }
+  }, 800);
 });
 
 calc.addEventListener("mouseup", function chiffres(e) {
-  endTimer = new Date(); // start timer when user stop holding click
   target = e.target.innerHTML;
-  let timer = endTimer - startTimer; // delta between click down and click up
   let lastCar = total.slice(-1);
   if (
     target !== "C" &&
@@ -150,11 +152,10 @@ calc.addEventListener("mouseup", function chiffres(e) {
     });
     total += target;
   } else if (target === "C") {
+    // if the user mouseup before 800ms (clickTimer duration) clear the previous action in the timed out function
+    clearTimeout(clickTimer);
     total = total.slice(0, -1);
     if (total == 0) {
-      total = "0";
-    }
-    if (timer > 1000) {
       total = "0";
     }
   } else if (target === "=") {
