@@ -4,6 +4,7 @@ const mouseCircle = document.getElementById("mouse");
 calcContainer = document.getElementById("calc-container");
 resContainer = document.getElementById("res-container");
 calcKey = document.querySelectorAll("td");
+clear = document.getElementById("clear");
 tableCalcKey = Array.from(calcKey); // turning queryselector into an array of td's elements
 calc = document.querySelector("table");
 resultat = document.getElementById("spanres");
@@ -106,6 +107,9 @@ window.addEventListener("keydown", (e) => {
 });
 
 calc.addEventListener("mousedown", (e) => {
+  if (e.target.innerHTML === "C") {
+    clear.classList.toggle("clicked");
+  }
   // set the click duration timer to a function who execute after 800ms
   clickTimer = setTimeout(() => {
     if (e.target.innerHTML === "C") {
@@ -154,6 +158,7 @@ calc.addEventListener("mouseup", function chiffres(e) {
   } else if (target === "C") {
     // if the user mouseup before 800ms (clickTimer duration) clear the previous action in the timed out function
     clearTimeout(clickTimer);
+    clear.classList.toggle("clicked");
     total = total.slice(0, -1);
     if (total == 0) {
       total = "0";

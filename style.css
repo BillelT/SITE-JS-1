@@ -12,6 +12,7 @@ body {
   cursor: none;
   min-height: 95.88601vh;
   font-family: Helvetica, sans-serif;
+  margin: 0;
 }
 
 header {
@@ -42,7 +43,6 @@ h1 {
 /* *******************************************CALC******************************************************* */
 .calculator {
   text-align: center;
-  margin-top: 50px;
   cursor: none;
   width: 35%;
   margin: 0 auto;
@@ -100,6 +100,31 @@ td:hover {
   cursor: pointer;
 }
 
+.clear {
+  position: relative;
+}
+
+.clear::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  transform: scale(0);
+  border-radius: 10px;
+  background-color: #292929;
+  opacity: 0.1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.8s ease-in-out;
+}
+
+.clear.clicked::after {
+  transform: scale(100%);
+}
+
 .equal {
   background-color: #81a7da;
 }
@@ -115,24 +140,22 @@ td:hover {
   h1 {
     font-size: 2rem;
   }
-  .res {
+  .calculator {
     width: 300px;
   }
   table {
     font-size: 1.5rem;
-    width: 300px;
   }
 }
 @media screen and (max-width: 480px) {
   h1 {
     font-size: 1.7rem;
   }
-  .res {
+  .calculator {
     width: 255px;
   }
   table {
     font-size: 1.2rem;
-    width: 255px;
   }
 }
 @media screen and (max-width: 360px) {
@@ -145,11 +168,10 @@ td:hover {
     font-size: 1.1rem;
     margin-bottom: 30px;
   }
-  .res {
+  .calculator {
     width: 220px;
   }
   table {
     font-size: 1rem;
-    width: 220px;
   }
 }
