@@ -107,6 +107,7 @@ window.addEventListener("keydown", function calcOnKey(e) {
   resultat.innerHTML = total;
 });
 function clearAll(e) {
+  e.preventDefault();
   if (e.target.innerHTML === "C") {
     clear.classList.toggle("clicked");
   }
@@ -126,6 +127,7 @@ calc.addEventListener("mouseleave", () => {
 });
 
 function chiffres(e) {
+  e.preventDefault();
   target = e.target.innerHTML;
   let lastCar = total.slice(-1);
   if (
