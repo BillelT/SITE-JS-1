@@ -119,6 +119,9 @@ calc.addEventListener("mousedown", (e) => {
     }
   }, 800);
 });
+calc.addEventListener("mouseleave", () => {
+  clear.classList.remove("clicked");
+});
 
 calc.addEventListener("mouseup", function chiffres(e) {
   target = e.target.innerHTML;
