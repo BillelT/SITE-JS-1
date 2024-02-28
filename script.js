@@ -108,7 +108,6 @@ window.addEventListener("keydown", (e) => {
 });
 
 calc.addEventListener("mousedown", (e) => {
-  e.preventDefault();
   if (e.target.innerHTML === "C") {
     clear.classList.toggle("clicked");
   }
