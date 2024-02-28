@@ -110,8 +110,8 @@ td:hover {
   position: absolute;
   top: 0;
   left: 0;
-  width: 60px;
-  height: 60px;
+  width: 100%;
+  height: 100%;
   transform: scale(0);
   border-radius: 10px;
   background-color: #292929;

@@ -57,7 +57,8 @@ window.addEventListener("keydown", (e) => {
     if (resBorderIsBlue == true && tableCalcKey[i].innerHTML == e.key) {
       if (
         target !== "Backspace" && // key 'C' replace by Backspace, usually use on keyboard to delete
-        target !== "Enter" && // key '=' replace by Enter, usually use on keyboard to ending input
+        target !== "Enter" &&
+        target !== "=" &&
         target !== ")" &&
         target !== "%"
       ) {
@@ -99,7 +100,7 @@ window.addEventListener("keydown", (e) => {
       total = "0";
     }
   }
-  if (target === "Enter") {
+  if (target === "Enter" || target === "=") {
     total = eval(total);
     total = total.toString();
   }
