@@ -106,8 +106,7 @@ window.addEventListener("keydown", function calcOnKey(e) {
   }
   resultat.innerHTML = total;
 });
-
-calc.addEventListener("mousedown", function clearAll(e) {
+function clearAll(e) {
   if (e.target.innerHTML === "C") {
     clear.classList.toggle("clicked");
   }
@@ -118,8 +117,9 @@ calc.addEventListener("mousedown", function clearAll(e) {
       resultat.innerHTML = total;
     }
   }, 800);
-});
-calc.addEventListener("touchstart", clear);
+}
+calc.addEventListener("mousedown", clearAll);
+calc.addEventListener("touchstart", clearAll);
 
 calc.addEventListener("mouseleave", () => {
   clear.classList.remove("clicked");
