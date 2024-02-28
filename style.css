@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
   user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 html {
@@ -141,37 +144,46 @@ td:hover {
   h1 {
     font-size: 2rem;
   }
+
   .calculator {
     width: 300px;
   }
+
   table {
     font-size: 1.5rem;
   }
 }
+
 @media screen and (max-width: 480px) {
   h1 {
     font-size: 1.7rem;
   }
+
   .calculator {
     width: 255px;
   }
+
   table {
     font-size: 1.2rem;
   }
 }
+
 @media screen and (max-width: 360px) {
   h1 {
     font-size: 1.4rem;
   }
 }
+
 @media screen and (max-width: 300px) {
   h1 {
     font-size: 1.1rem;
     margin-bottom: 30px;
   }
+
   .calculator {
     width: 220px;
   }
+
   table {
     font-size: 1rem;
   }
