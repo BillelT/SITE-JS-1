@@ -49,7 +49,7 @@ resContainer.addEventListener("mouseleave", () => {
   }
 });
 
-window.addEventListener("keydown", (e) => {
+window.addEventListener("keydown", function calcOnKey(e) {
   let lastCar = total.slice(-1);
   target = e.key;
   // checking if user select calculator and if the key press is a key on the calculator
@@ -57,7 +57,7 @@ window.addEventListener("keydown", (e) => {
     if (resBorderIsBlue == true && tableCalcKey[i].innerHTML == e.key) {
       if (
         target !== "Backspace" && // key 'C' replace by Backspace, usually use on keyboard to delete
-        target !== "Enter" &&
+        target !== "Enter" && // let user click Enter for UX
         target !== "=" &&
         target !== ")" &&
         target !== "%"
@@ -107,7 +107,7 @@ window.addEventListener("keydown", (e) => {
   resultat.innerHTML = total;
 });
 
-calc.addEventListener("mousedown", (e) => {
+calc.addEventListener("mousedown", function clear(e) {
   if (e.target.innerHTML === "C") {
     clear.classList.toggle("clicked");
   }
@@ -119,6 +119,8 @@ calc.addEventListener("mousedown", (e) => {
     }
   }, 800);
 });
+calc.addEventListener("touchstart", clear(e));
+
 calc.addEventListener("mouseleave", () => {
   clear.classList.remove("clicked");
 });
