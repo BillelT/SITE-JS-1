@@ -125,7 +125,7 @@ calc.addEventListener("mouseleave", () => {
   clear.classList.remove("clicked");
 });
 
-calc.addEventListener("mouseup", function chiffres(e) {
+function chiffres(e) {
   target = e.target.innerHTML;
   let lastCar = total.slice(-1);
   if (
@@ -174,7 +174,11 @@ calc.addEventListener("mouseup", function chiffres(e) {
     total = total.toString();
   }
   resultat.innerHTML = total;
-});
+};
+
+calc.addEventListener("mouseup", chiffres);
+calc.addEventListener("touchend", chiffres);
+
 
 // create a custom cursor whith event mousemove
 window.addEventListener("mousemove", (e) => {
