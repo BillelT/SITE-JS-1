@@ -107,7 +107,7 @@ window.addEventListener("keydown", function calcOnKey(e) {
   resultat.innerHTML = total;
 });
 
-calc.addEventListener("mousedown", function clear(e) {
+calc.addEventListener("mousedown", function clearAll(e) {
   if (e.target.innerHTML === "C") {
     clear.classList.toggle("clicked");
   }
@@ -119,7 +119,7 @@ calc.addEventListener("mousedown", function clear(e) {
     }
   }, 800);
 });
-calc.addEventListener("touchstart", clear(e));
+calc.addEventListener("touchstart", clear);
 
 calc.addEventListener("mouseleave", () => {
   clear.classList.remove("clicked");
