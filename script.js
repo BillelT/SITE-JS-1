@@ -1,7 +1,6 @@
 // Declare all global variables
 
-const mouseCircle = document.getElementById("mouse");
-calcContainer = document.getElementById("calc-container");
+const calcContainer = document.getElementById("calc-container");
 resContainer = document.getElementById("res-container");
 calcKey = document.querySelectorAll("td");
 clear = document.getElementById("clear");
@@ -33,16 +32,16 @@ window.addEventListener("mousedown", (e) => {
 
 // event listener for hover on res-container
 resContainer.addEventListener("mouseenter", () => {
-  resContainer.style.background = "#dedde0c0";
+  resContainer.style.background = "transparent";
   if (resBorderIsBlue == false) {
     // if res-container's border is blue, it doesnt change until user unselect the calculator
-    resContainer.style.border = "none";
+    resContainer.style.border = "2px solid #aaaaaa";
   }
 });
 
 // event listener for hover on res-container
 resContainer.addEventListener("mouseleave", () => {
-  resContainer.style.background = "#c0bfc2c0";
+  resContainer.style.background = "transparent";
   if (resBorderIsBlue == false) {
     // if res-container's border is blue, it doesnt change until user unselect the calculator
     resContainer.style.border = "2px solid white";
@@ -176,26 +175,7 @@ function chiffres(e) {
     total = total.toString();
   }
   resultat.innerHTML = total;
-};
+}
 
 calc.addEventListener("mouseup", chiffres);
 calc.addEventListener("touchend", chiffres);
-
-
-// create a custom cursor whith event mousemove
-window.addEventListener("mousemove", (e) => {
-  mouseCircle.style.left = e.pageX + "px";
-  mouseCircle.style.top = e.pageY + "px";
-  // go back to normal cursor when user want to interact with calculator
-  if (
-    e.target == resultat ||
-    e.target == resContainer ||
-    e.target.offsetParent == calc ||
-    e.target == calc ||
-    e.target == calcContainer
-  ) {
-    mouseCircle.style.opacity = "0";
-  } else {
-    mouseCircle.style.opacity = "1";
-  }
-});

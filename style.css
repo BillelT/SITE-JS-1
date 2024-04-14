@@ -4,6 +4,7 @@
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  font-weight: 500;
 }
 
 html {
@@ -13,8 +14,9 @@ html {
 body {
   background: linear-gradient(18deg, #010101 0, #1c1c1c 100%);
   overflow-x: hidden;
-  cursor: none;
-  min-height: 95.88601vh;
+  /* cursor: none; */
+  min-height: 100vh;
+  min-height: 100svh;
   font-family: Helvetica, sans-serif;
   margin: 0;
 }
@@ -27,8 +29,9 @@ header {
 h1 {
   position: relative;
   font-family: Helvetica, sans-serif;
-  font-size: 60px;
-  color: #f1f1f1;
+  color: #ffffff;
+  font-size: calc(40px + (60 - 40) * ((100vw - 320px) / (1440 - 320)));
+  font-weight: 700;
 }
 
 /* **********************************MOUSE CIRCLE************************************* */
@@ -47,22 +50,24 @@ h1 {
 /* *******************************************CALC******************************************************* */
 .calculator {
   text-align: center;
-  cursor: none;
-  width: 35%;
   margin: 0 auto;
+  width: 87.5%;
   cursor: pointer;
 }
 
 .res {
-  width: 98%;
   margin: 0 auto;
-  background: #c0bfc2c0;
-  height: 64px;
+  background: transparent;
+  width: 100%;
+  height: 53px;
   position: relative;
-  border-radius: 10px;
-  border: 2px solid #f1f1f1;
-  font-size: 1.7rem;
+  border-radius: 8px;
+  border: 2px solid #ffffff;
+  color: white;
   overflow: hidden;
+  font-size: calc(27px + (36 - 27) * ((100vw - 320px) / (1440 - 320)));
+  width: 100%;
+  max-width: 368px;
 }
 
 span {
@@ -75,33 +80,53 @@ span {
 }
 
 table {
+  width: 100%;
   user-select: none;
-  width: 98%;
-  min-height: 300px;
   margin: 16px auto 0;
-  font-size: 1.8rem;
-  background: #d9d9d9;
   border-radius: 10px;
+  font-size: calc(27px + (36 - 27) * ((100vw - 320px) / (1440 - 320)));
+  max-width: 368px;
 }
 
 thead {
   display: none;
 }
 
+tbody {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: 5px;
+}
+
+tr {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
 td {
-  background: #d9d9d9;
-  color: #1a1919d0;
-  width: 30px;
-  height: 30px;
+  background: #eeeeee;
+  color: #0a0a0a;
+  width: 60px;
+  height: 60px;
   transition: all 0.3s ease-in-out;
-  vertical-align: middle;
-  border-radius: 10px;
-  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 td:hover {
-  background: #fcf8f8;
+  background: rgb(250, 250, 250);
   cursor: pointer;
+}
+
+.operator {
+  background-color: #ffa500;
+}
+.operator:hover {
+  background-color: #fcca6e;
 }
 
 .clear {
@@ -127,7 +152,6 @@ td:hover {
 
 .clear.clicked::after {
   transform: scale(100%);
-  border-radius: 10px;
 }
 
 .equal {
@@ -140,52 +164,13 @@ td:hover {
   cursor: pointer;
 }
 
-/* **************************************MEDIA QUERIES************************************** */
-@media screen and (max-width: 1080px) {
-  h1 {
-    font-size: 2rem;
+@media screen and (min-width: 640px) {
+  .res {
+    height: 72px;
   }
 
-  .calculator {
-    width: 300px;
-  }
-
-  table {
-    font-size: 1.5rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  h1 {
-    font-size: 1.7rem;
-  }
-
-  .calculator {
-    width: 255px;
-  }
-
-  table {
-    font-size: 1.2rem;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  h1 {
-    font-size: 1.4rem;
-  }
-}
-
-@media screen and (max-width: 300px) {
-  h1 {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-  }
-
-  .calculator {
-    width: 220px;
-  }
-
-  table {
-    font-size: 1rem;
+  td {
+    width: 80px;
+    height: 80px;
   }
 }

@@ -1,72 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My lil calc</title>
-    <link rel="stylesheet" href="/style.css" />
-    <meta
-      name="description"
-      content="Mini calculatrice en Javascript, développé par Billel Tighidet"
-    />
-  </head>
 
-  <body>
-    <header>
-      <h1>My calculator</h1>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My lil calc</title>
+  <link rel="stylesheet" href="/style.css" />
+  <meta name="description" content="Mini calculatrice en Javascript, développé par Billel Tighidet" />
+</head>
 
-    <main>
-      <div id="mouse"></div>
-      <section class="calculator" id="calc-container">
-        <div class="res" id="res-container">
-          <span id="spanres">0</span>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>1</th>
-              <th>2</th>
-              <th>3</th>
-              <th>4</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="calc-key">(</td>
-              <td class="calc-key">)</td>
-              <td class="calc-key">%</td>
-              <td class="calc-key clear" id="clear">C</td>
-            </tr>
-            <tr>
-              <td class="calc-key">7</td>
-              <td class="calc-key">8</td>
-              <td class="calc-key">9</td>
-              <td class="calc-key">+</td>
-            </tr>
-            <tr>
-              <td class="calc-key">4</td>
-              <td class="calc-key">5</td>
-              <td class="calc-key">6</td>
-              <td class="calc-key">-</td>
-            </tr>
-            <tr>
-              <td class="calc-key">1</td>
-              <td class="calc-key">2</td>
-              <td class="calc-key">3</td>
-              <td class="calc-key">/</td>
-            </tr>
-            <tr>
-              <td class="calc-key">0</td>
-              <td class="calc-key">.</td>
-              <td class="calc-key equal">=</td>
-              <td class="calc-key">*</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </main>
-    <script src="/script.js"></script>
-  </body>
+<body>
+  <header>
+    <h1>My calculator</h1>
+  </header>
+
+  <main>
+    <section class="calculator" id="calc-container">
+      <div class="res" id="res-container">
+        <span id="spanres">0</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="calc-key">(</td>
+            <td class="calc-key">)</td>
+            <td class="calc-key">%</td>
+            <td class="calc-key clear" id="clear">C</td>
+          </tr>
+          <tr>
+            <td class="calc-key">7</td>
+            <td class="calc-key">8</td>
+            <td class="calc-key">9</td>
+            <td class="calc-key operator">+</td>
+          </tr>
+          <tr>
+            <td class="calc-key">4</td>
+            <td class="calc-key">5</td>
+            <td class="calc-key">6</td>
+            <td class="calc-key operator">-</td>
+          </tr>
+          <tr>
+            <td class="calc-key">1</td>
+            <td class="calc-key">2</td>
+            <td class="calc-key">3</td>
+            <td class="calc-key operator">/</td>
+          </tr>
+          <tr>
+            <td class="calc-key">0</td>
+            <td class="calc-key">.</td>
+            <td class="calc-key equal">=</td>
+            <td class="calc-key operator">*</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script src="/script.js"></script>
+</body>
+
 </html>
