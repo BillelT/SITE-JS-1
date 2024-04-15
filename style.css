@@ -67,7 +67,7 @@ h1 {
   overflow: hidden;
   font-size: calc(27px + (36 - 27) * ((100vw - 320px) / (1440 - 320)));
   width: 100%;
-  max-width: 368px;
+  max-width: 280px;
 }
 
 span {
@@ -85,7 +85,7 @@ table {
   margin: 16px auto 0;
   border-radius: 10px;
   font-size: calc(27px + (36 - 27) * ((100vw - 320px) / (1440 - 320)));
-  max-width: 368px;
+  max-width: 280px;
 }
 
 thead {
@@ -167,6 +167,11 @@ td:hover {
 @media screen and (min-width: 640px) {
   .res {
     height: 72px;
+    max-width: 368px;
+  }
+
+  table {
+    max-width: 368px;
   }
 
   td {
